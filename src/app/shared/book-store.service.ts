@@ -11,7 +11,8 @@ import { BookFactory } from './book-factory';
   providedIn: 'root'
 })
 export class BookStoreService {
-  private api = 'https://api4.angular-buch.com/secure';
+  // private api = 'https://api4.angular-buch.com/secure';
+  private api = 'http://172.21.4.4:3000/secure';
 
   constructor(private http: HttpClient) {}
 

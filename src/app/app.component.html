@@ -1,3 +1,5 @@
+<h2>Book Monkey PWA</h2>
+
 <div class="ui mini menu">
   <a routerLink="home"  routerLinkActive="active" class="item" i18n="Text of the link to the home screen@@AppComponent:home">Home</a>
   <a routerLink="books" routerLinkActive="active" class="item" i18n="Text of the link to the books screen@@AppComponent:book">Bücher</a>
@@ -11,6 +13,15 @@
         'positive': permission === 'granted',
         'negative': permission === 'denied'
       }"><i class="bell icon"></i></button>
+  </div>
+</div>
+
+<div routerLink="books"  routerLinkActive="active" class="item">
+  <div class="ui animated button" tabindex="0">
+    <div class="visible content">Book Books Bookliste</div>
+    <div class="hidden content">
+      <i class="right arrow icon"></i>
+    </div>
   </div>
 </div>
 

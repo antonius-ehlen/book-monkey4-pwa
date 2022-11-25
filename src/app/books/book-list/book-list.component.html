@@ -1,6 +1,66 @@
-<div class="ui middle aligned selection divided list">
+<h4>Grid mit 4/4 Teilung</h4>
+
+<ng-container *ngFor="let mybook of books$ | async as books; index as ind">
+  <ng-container *ngIf="!(ind % 4)">
+    <div class="ui grid">
+      <div class="four wide column">
+        <bm-book-list-item 
+        *ngIf="books[ind]"
+        class="item" [book]="books[ind]" [routerLink]="books[ind].isbn">
+        </bm-book-list-item>
+      </div>
+
+      <div class="four wide column">
+        <bm-book-list-item 
+        *ngIf="books[ind]"
+        class="item" [book]="books[ind+1]" [routerLink]="books[ind+1].isbn">
+        </bm-book-list-item>
+      </div>
+      <div class="four wide column">
+        <bm-book-list-item 
+        *ngIf="books[ind]"
+        class="item" [book]="books[ind+2]" [routerLink]="books[ind+2].isbn">
+        </bm-book-list-item>
+      </div>
+
+      <div class="four wide column">
+        <bm-book-list-item 
+        *ngIf="books[ind]"
+        class="item" [book]="books[ind+3]" [routerLink]="books[ind+3].isbn">
+        </bm-book-list-item>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+
+
+<!-- <div class="ui middle aligned selection divided list"> -->
+<!-- <div class="ui grid">
+
+    <div class="four wide column">
+      <div *ngFor="let mybook of books$ | async as books; even as isEven">
+        <bm-book-list-item class="item" *ngIf="isEven" [book]="mybook" [routerLink]="mybook.isbn">
+        </bm-book-list-item>
+        <br>
+      </div>
+    </div>
+
+    <div class="four wide column">
+      <div *ngFor="let mybook of books$ | async as books; odd as isOdd">
+        <bm-book-list-item class="item" *ngIf="isOdd" [book]="mybook" [routerLink]="mybook.isbn">
+        </bm-book-list-item>
+        <br>
+      </div>
+    </div>
+  </div> -->
+<!-- </div> -->
+
+
+
+
+<!-- < class="ui middle aligned selection divided list">
   
-  <ng-container *ngIf="books$ | async as books; else loading">
+ <div *ngIf="books$ | async as books; else loading">
     <bm-book-list-item class="item"
       *ngFor="let b of books"
       [book]="b"
@@ -10,7 +70,7 @@
       i18n="@@BookListComponent:no book">
       Es wurden noch keine Bücher eingetragen.
     </p>
-  </ng-container>
+  </div>
 
   <ng-template #loading>
     <div class="ui active dimmer">
@@ -20,6 +80,6 @@
       </div>
     </div>
   </ng-template>
+ 
 
-</div>
-    
+</div> -->
